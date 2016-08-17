@@ -1,0 +1,19 @@
+#content {
+  width: 450px; 
+  height: 300px; 
+  padding-left: 5px;
+  overflow-y: scroll;
+}
+
+.jumbotron {
+  padding-left: 30px; !important
+  padding-right: 30px; !important
+}
+
+.controls {
+  height: 300px;
+}
+
+.controls input {
+  width: 350px;
+}
