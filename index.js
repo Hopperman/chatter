@@ -1,7 +1,6 @@
 var express = require("express");
 var engines = require('consolidate');
 var app = express();
-var port = 3700;
 
 app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
@@ -12,9 +11,9 @@ app.get("/", function(req, res) {
   res.render("index.html");
 });
 
-var io = require('socket.io').listen(app.listen(port));
+var io = require('socket.io').listen(app.listen(process.env.PORT || 3700));
 
-console.log(`VE ARE LISTENING TO ZE MESSAGES ON ${port}`);
+console.log(`VE ARE LISTENING TO ZE MESSAGES ON ${process.env.PORT || 3700}`);
 
 io.sockets.on('connection', function (socket) {
   socket.emit('message', { message: '<i>connected</i><br />' });

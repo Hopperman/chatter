@@ -1,7 +1,8 @@
 window.onload = function() {
+  var socketUrl = window.chatter_env.URL || 'http://localhost:3700';
 
   var messages = [];
-  var socket = io.connect('http://localhost:3700');
+  var socket = io.connect(socketUrl);
   var field = document.getElementById("field");
   var sendButton = document.getElementById("send");
   var content = document.getElementById("content");
